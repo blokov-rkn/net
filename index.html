@@ -23,8 +23,10 @@
     justify-content: flex-start;
     padding: 20px 20px 5px 25px;
   }
+
   .header-logo img {
     width: 180px;
+    height: auto;
   }
 
   /* ===== Заголовок ===== */
@@ -41,7 +43,7 @@
     display: flex;
     gap: 30px;
     padding: 0 20px;
-    align-items: flex-start; /* ВАЖНО: теперь не растягивает */
+    align-items: flex-start; /* НЕ тянем высоту */
   }
 
   /* Левый текстовый блок */
@@ -53,19 +55,17 @@
     border: 1px solid #334155;
   }
 
-  /* Правый баннер — уменьшенный, равный высоте текста */
+  /* ===== БАННЕР (уменьшенный) ===== */
   .banner-box {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* НЕ растягиваем */
+    flex: 0 0 auto; /* Не растягиваем */
   }
 
   .banner-box img {
-    width: 100%;
-    max-height: 100%;        /* важно: ограничиваем высоту */
-    object-fit: contain;     /* картинка уменьшится, но не увеличится */
+    max-height: 300px;   /* <<< ВОТ ТУТ МЕНЯЕШЬ РАЗМЕР БАННЕРА */
+    width: auto;
+    object-fit: cover;
     border-radius: 16px;
+    display: block;
   }
 
   /* ===== SEO блоки ===== */
@@ -86,6 +86,7 @@
     text-align: left;
   }
 
+  /* Кнопки */
   .btn-center {
     display: inline-block;
     margin-top: 18px;
@@ -95,9 +96,14 @@
     border-radius: 8px;
     font-size: 16px;
     text-decoration: none;
+    font-weight: 500;
   }
 
-  /* Telegram */
+  .btn-center:hover {
+    opacity: 0.85;
+  }
+
+  /* Telegram блок */
   .telegram-box {
     max-width: 780px;
     margin: 40px auto;
@@ -108,13 +114,20 @@
     text-align: center;
   }
 
-  /* Мобильная адаптация */
+  .telegram-box a {
+    color: #38bdf8;
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  /* ===== Мобилочка ===== */
   @media (max-width: 900px) {
     .hero-section {
       flex-direction: column;
       align-items: center;
     }
     .banner-box img {
+      max-height: none;
       width: 100%;
       height: auto;
       object-fit: contain;
@@ -132,26 +145,28 @@
   <img src="https://blokov.net/wp-content/uploads/2025/10/logo_brand_blokovnet-1.png" alt="BLOKOV.NET Logo">
 </div>
 
+<!-- Заголовок -->
 <h1>Рейтинг лучших онлайн-казино 2025 года</h1>
 
-<!-- ДВЕ КОЛОНКИ -->
+<!-- Две колонки -->
 <div class="hero-section">
 
-  <!-- ЛЕВО -->
+  <!-- Левый блок -->
   <div class="content-block">
     BLOKOV.NET — это независимый информационный ресурс, где собраны авторские рейтинги и детальные обзоры самых надежных онлайн-казино. Мы тщательно проверяем каждую платформу: изучаем лицензирование, условия бонусов, реальные отзывы игроков и качество обслуживания, чтобы пользователи могли выбирать только безопасные и проверенные игровые сайты с честными выплатами.
 
     На нашем портале представлены честные рейтинги, аналитические обзоры и всегда актуальные рабочие зеркала популярных казино. Даже если отдельные сайты временно блокируются или ограничиваются РКН, доступ к проверенным игровым платформам остаётся открытым — вместе с объективной информацией о казино, ставках и бонусах.
   </div>
 
-  <!-- ПРАВО — МАЛЕНЬКИЙ БАННЕР -->
+  <!-- Баннер -->
   <div class="banner-box">
     <img src="https://blokov.net/wp-content/uploads/2025/11/telegram-post.webp" alt="BLOKOV.NET Banner">
   </div>
 
 </div>
 
-<!-- SEO БЛОКИ -->
+<!-- === SEO BLOCKS === -->
+
 <h2>Топ 10 лучших онлайн-казино 2025</h2>
 <div class="seo-block">
 Рейтинг топ 10 онлайн-казино 2025 года включает только лицензированные и проверенные платформы. Мы анализируем честность выплат, стабильность работы, бонусные программы, игровую библиотеку и безопасность данных.
