@@ -36,17 +36,17 @@
     margin: 5px 0 25px 0;
   }
 
-  /* ===== Две колонки (баннер справа) ===== */
+  /* ===== Две колонки ===== */
   .hero-section {
     max-width: 1100px;
     margin: 0 auto 40px auto;
     display: flex;
     gap: 30px;
     padding: 0 20px;
-    align-items: flex-start;
+    align-items: stretch; /* одинаковая высота */
   }
 
-  /* Левая колонка */
+  /* Левый текстовый блок */
   .content-block {
     flex: 1;
     background: #1e293b;
@@ -55,25 +55,18 @@
     border: 1px solid #334155;
   }
 
-  /* Правая колонка — компактный баннер */
+  /* Баннер — только изображение, без фона */
   .banner-box {
     flex: 1;
-    max-width: 350px;
-    background: #1e293b;
-    border-radius: 16px;
-    border: 1px solid #334155;
-    padding: 10px;
-    height: 320px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: stretch;
   }
 
   .banner-box img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    border-radius: 12px;
+    object-fit: cover;        /* растягиваем пропорционально */
+    border-radius: 16px;      /* скругленные края */
   }
 
   /* ===== SEO блоки ===== */
@@ -94,7 +87,7 @@
     text-align: left;
   }
 
-  /* Кнопка */
+  /* ===== Кнопки ===== */
   .btn-center {
     display: inline-block;
     margin-top: 18px;
@@ -134,16 +127,9 @@
       flex-direction: column;
       align-items: center;
     }
-    .banner-box {
-      max-width: 100%;
-      height: auto;
-    }
     .banner-box img {
       height: auto;
       object-fit: contain;
-    }
-    .content-block {
-      width: 100%;
     }
     .header-logo {
       justify-content: center;
@@ -165,14 +151,14 @@
 <!-- Две колонки -->
 <div class="hero-section">
 
-  <!-- ВСТУПИТЕЛЬНЫЙ БЛОК -->
+  <!-- ЛЕВЫЙ БЛОК -->
   <div class="content-block">
     BLOKOV.NET — это независимый информационный ресурс, где собраны авторские рейтинги и детальные обзоры самых надежных онлайн-казино. Мы тщательно проверяем каждую платформу: изучаем лицензирование, условия бонусов, реальные отзывы игроков и качество обслуживания, чтобы пользователи могли выбирать только безопасные и проверенные игровые сайты с честными выплатами.
 
     На нашем портале представлены честные рейтинги, аналитические обзоры и всегда актуальные рабочие зеркала популярных казино. Даже если отдельные сайты временно блокируются или ограничиваются РКН, доступ к проверенным игровым платформам остаётся открытым — вместе с объективной информацией о казино, ставках и бонусах.
   </div>
 
-  <!-- КОМПАКТНЫЙ БАННЕР -->
+  <!-- ПРАВЫЙ БАННЕР — ТОЧНО ПО ВЫСОТЕ ЛЕВОГО -->
   <div class="banner-box">
     <img src="https://blokov.net/wp-content/uploads/2025/11/telegram-post.webp" alt="BLOKOV.NET Banner">
   </div>
